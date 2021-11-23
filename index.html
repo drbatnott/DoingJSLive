@@ -7,10 +7,30 @@
     
 </head>
 <body>
-
+    <!--Here is my HTML Comment -->
     <h1 id="demo2">Nothing to see here</h1>
+    <img id="blue" src="Gradient.png" alt="blue square should be here" />
     <script>
-        document.getElementById("demo2").innerHTML = "Hello World in JavaScript";
+        /*
+         * Math is a mathematical library and we can call functions from it
+         * in the line below variable x is assigned the value of Math.PI
+         * The numbers in JavaScript are all stored as 16 bit floats
+         * */
+        var x = Math.PI;//10;
+        var y = "3";
+        var z = x / y;
+        /*
+         * Comments in JavaScript can be blocks
+         * Concatenation in JavaScript
+         * */
+        document.getElementById("demo2").innerHTML = "Hello World in JavaScript variable x is " + x;
+        document.getElementById("demo2").innerHTML += "<br/> y is " + y;
+        //toPrecision calls the number class function that rounds the number to 8 significant figures
+        document.getElementById("demo2").innerHTML += "<br/> z is " + z.toPrecision(8);
+        //comments in JavaScript can be single lines
     </script>
+    <br />
+    <button onclick="document.getElementById('blue').src='sparkle.png'">Change Image</button>
+    <button onclick="document.getElementById('blue').src='Gradient.png'">Change Back</button>
 </body>
 </html>
