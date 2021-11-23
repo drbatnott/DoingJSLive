@@ -5,7 +5,29 @@
     <meta charset="utf-8" />
     <title>Doing JavaScript</title>
     <script>
-       
+        //An array of 3 image names
+        const imagesToShow = ['Gradient.png', 'sparkle.png', 'Gradient1.png'];
+        var c = 0;
+        //This is just a demo. I don't ned a function to add two numbers
+        function addNumbers(a, b) {
+            return a + b;
+        }
+        //function to change the image
+        function changeImage() {
+            c++;
+            if (c >= imagesToShow.length) {
+                c = 0;
+            }
+            document.getElementById('blue').src = imagesToShow[c];
+        }
+        //Testing this failed Why?
+        function changeImageDown() {
+            c--;
+            if (c < 0) {
+                c = imagesToShow.Length-1;
+            }
+            document.getElementById('blue').src = imagesToShow[c];
+        }
     </script>
 </head>
 <body>
@@ -29,10 +51,12 @@
         document.getElementById("demo2").innerHTML += "<br/> y is " + y;
         //toPrecision calls the number class function that rounds the number to 8 significant figures
         document.getElementById("demo2").innerHTML += "<br/> z is " + z.toPrecision(8);
+        //this line will call the add x and y
+        document.getElementById("demo2").innerHTML += "<br/> " + addNumbers(x, z).toPrecision(3);
         //comments in JavaScript can be single lines
     </script>
     <br />
-    <button onclick="document.getElementById('blue').src='sparkle.png'">Change Image</button>
-    <button onclick="document.getElementById('blue').src='Gradient.png'">Change Back</button>
+    <button onclick=changeImage()>Change Up</button>
+    <button onclick=changeImageDown()>Change Down</button>
 </body>
 </html>
