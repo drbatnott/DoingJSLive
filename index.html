@@ -12,7 +12,17 @@
         function addNumbers(a, b) {
             return a + b;
         }
-        //function to change the image
+        /*function to change the image
+         * c is a local var to this set of script functions etc
+         * as we enter either of the following functions we change the value of c
+         * c is the selector of the imagesToShow array
+         * in the array above imagesToShow[0] == 'Gradient.png'
+         * imagesToShow.length is the length of the array
+         * if we try to make images to show > 2 - in JavaScript array go from element 0 to element length-1
+         * there would be an error so we make it loop back - alternatively we could hide the button
+         * If we try to make c < 0 then there would be an error so we make it loop - we could hide the button
+         * when c reaches 0
+         */
         function changeImage() {
             c++;
             if (c >= imagesToShow.length) {
@@ -21,10 +31,11 @@
             document.getElementById('blue').src = imagesToShow[c];
         }
         //Testing this failed Why?
+        //I had put a L for length 
         function changeImageDown() {
             c--;
             if (c < 0) {
-                c = imagesToShow.Length-1;
+                c = imagesToShow.length-1;
             }
             document.getElementById('blue').src = imagesToShow[c];
         }
@@ -56,6 +67,10 @@
         //comments in JavaScript can be single lines
     </script>
     <br />
+    <!--
+        when we press the Change Up button it will call the function changeImage()
+        similarly when we click the Change Down button it will call the changeImageDown() function
+    -->
     <button onclick=changeImage()>Change Up</button>
     <button onclick=changeImageDown()>Change Down</button>
 </body>
